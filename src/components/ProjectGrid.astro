@@ -1,0 +1,49 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { projects } from "../data/projects";
+---
+
+<section class="section" id="proyectos">
+  <div class="container">
+    <div class="section-header">
+      <div class="gradient-line"></div>
+      <h2 class="section-title fade-up">Proyectos que Resuelven Problemas Reales</h2>
+      <p class="section-subtitle fade-up">
+        Cada proyecto nació de una necesidad concreta. Aquí muestro el problema, la solución técnica y el resultado medible.
+      </p>
+    </div>
+
+    <div class="projects-grid stagger">
+      {projects.map((project) => (
+        <ProjectCard
+          id={project.id}
+          title={project.title}
+          subtitle={project.subtitle}
+          category={project.category}
+          badgeClass={project.badgeClass}
+          problem={project.problem}
+          metric={project.metric}
+          metricLabel={project.metricLabel}
+          stack={project.stack}
+          highlights={project.highlights}
+          demoUrl={project.demoUrl}
+          repoUrl={project.repoUrl}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

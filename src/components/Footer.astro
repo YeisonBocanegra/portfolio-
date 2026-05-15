@@ -1,0 +1,174 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/YeisonBocanegra", icon: "⟐" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/yeison-yesid-bocanegra-quimbayo-64a988376/", icon: "in" },
+  { label: "Email", href: "mailto:workjbq@gmail.com", icon: "✉" },
+  { label: "WhatsApp", href: "https://wa.me/573245652269", icon: "✆" },
+];
+---
+
+<footer class="footer" id="contacto">
+  <div class="container">
+    <div class="footer-content fade-up">
+      <div class="footer-main">
+        <h2 class="footer-title">¿Listo para trabajar juntos?</h2>
+        <p class="footer-description">
+          Si buscas un Ingeniero de Sistemas orientado a resultados, hablemos.
+        </p>
+        <a href="https://wa.me/573245652269" target="_blank" rel="noopener" class="btn btn-primary">
+          💬 Contactar por WhatsApp
+        </a>
+      </div>
+
+      <div class="footer-info">
+        <div class="info-block">
+          <h4 class="info-label">Contacto</h4>
+          <p class="info-value">324 565 2269</p>
+          <p class="info-value">Bogotá, Colombia</p>
+        </div>
+        <div class="info-block">
+          <h4 class="info-label">Profesional</h4>
+          <p class="info-value">Tarjeta Profesional</p>
+          <p class="info-value" style="color: var(--accent-light)">091122-0778259 CND</p>
+        </div>
+        <div class="info-block">
+          <h4 class="info-label">Links</h4>
+          <div class="social-links">
+            {socialLinks.map((link) => (
+              <a href={link.href} target="_blank" rel="noopener" class="social-link" aria-label={link.label}>
+                <span class="social-icon">{link.icon}</span>
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {currentYear} Yeison Yesid Bocanegra Quimbayo · Ingeniero de Sistemas</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 5rem 0 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-secondary);
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .footer-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .footer-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .footer-description {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 400px;
+    line-height: 1.7;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  .info-value {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+  }
+
+  .social-link:hover {
+    border-color: var(--accent);
+    color: var(--accent-light);
+    background: var(--accent-glow);
+  }
+
+  .social-icon {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .footer-main {
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-description {
+      margin: 0 auto;
+    }
+
+    .social-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>

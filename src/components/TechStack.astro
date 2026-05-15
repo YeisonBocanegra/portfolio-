@@ -1,0 +1,137 @@
+---
+const categories = [
+  {
+    title: "Frontend & Frameworks",
+    items: [
+      { name: "Next.js", icon: "▲" },
+      { name: "React", icon: "⚛️" },
+      { name: "Astro", icon: "🚀" },
+      { name: "TypeScript", icon: "🔷" },
+      { name: "JavaScript", icon: "⚡" },
+      { name: "HTML5/CSS3", icon: "🎨" },
+    ],
+  },
+  {
+    title: "Backend & Bases de Datos",
+    items: [
+      { name: "Node.js", icon: "🟩" },
+      { name: "PHP", icon: "🐘" },
+      { name: "PostgreSQL", icon: "🐘" },
+      { name: "MySQL", icon: "🗄️" },
+      { name: "Supabase", icon: "⚡" },
+      { name: "pgvector", icon: "🔍" },
+    ],
+  },
+  {
+    title: "IA & Integraciones",
+    items: [
+      { name: "Gemini AI", icon: "🤖" },
+      { name: "RAG", icon: "🧠" },
+      { name: "Vercel AI SDK", icon: "▲" },
+      { name: "Wompi API", icon: "💳" },
+      { name: "Google Drive API", icon: "📁" },
+      { name: "WhatsApp API", icon: "💬" },
+    ],
+  },
+  {
+    title: "Deploy & Herramientas",
+    items: [
+      { name: "Vercel", icon: "▲" },
+      { name: "Git/GitHub", icon: "🔀" },
+      { name: "CodeIgniter", icon: "🔥" },
+      { name: "Google Ads", icon: "🎯" },
+      { name: "Meta Ads", icon: "📢" },
+      { name: "AdminLTE", icon: "📋" },
+    ],
+  },
+];
+---
+
+<section class="section" id="stack">
+  <div class="container">
+    <div class="section-header">
+      <div class="gradient-line"></div>
+      <h2 class="section-title fade-up">Stack Técnico</h2>
+      <p class="section-subtitle fade-up">
+        Herramientas y tecnologías que utilizo para construir soluciones completas.
+      </p>
+    </div>
+
+    <div class="stack-grid stagger">
+      {categories.map((cat) => (
+        <div class="stack-category card fade-up">
+          <h3 class="stack-category-title">{cat.title}</h3>
+          <div class="stack-items">
+            {cat.items.map((item) => (
+              <div class="stack-item">
+                <span class="stack-icon">{item.icon}</span>
+                <span class="stack-name">{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stack-category {
+    padding: 2rem;
+  }
+
+  .stack-category-title {
+    font-size: 1rem;
+    color: var(--accent-light);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .stack-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stack-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+  }
+
+  .stack-item:hover {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: var(--border-hover);
+  }
+
+  .stack-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .stack-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .stack-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

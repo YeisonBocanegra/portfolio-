@@ -1,0 +1,250 @@
+---
+const experience = [
+  {
+    period: "Ago 2024 – Presente",
+    role: "Desarrollador Full Stack & Integración IA",
+    company: "Proyectos Independientes — Sector AEC",
+    achievements: [
+      "Diseño y desarrollo de asistente de ventas con IA conversacional (Gemini + RAG + pgvector)",
+      "Integración de pasarela de pagos Wompi con verificación de webhooks HMAC y hash de integridad",
+      "Control de acceso a archivos automatizado mediante Google Drive API (Service Account)",
+      "Plataforma e-commerce SSR con Astro, Supabase y Vercel — landing pages dinámicas por producto",
+      "Gestión de campañas de tráfico en Google Ads y Meta Ads para conversión",
+    ],
+  },
+  {
+    period: "Ene 2020 – Jul 2024",
+    role: "Desarrollador de Software y Operaciones",
+    company: "Hotel Portal del Magdalena",
+    achievements: [
+      "Diseño y desarrollo de PMS con PHP (CodeIgniter 3) y MySQL",
+      "Implementación de check-in/out, recibos, abonos y reportes operativos",
+      "Desarrollo de web corporativa en WordPress",
+      "Administración de campañas publicitarias en Meta Ads",
+    ],
+  },
+  {
+    period: "Mar 2019 – Ago 2019",
+    role: "Aprendiz Tecnólogo ADSI (Etapa Productiva)",
+    company: "SENA — Agroindustria",
+    achievements: [
+      "Desarrollo de GesproAgro: sistema de trazabilidad de materias primas",
+      "Control de procesos en elaboración de productos agroindustriales (PHP, MySQL)",
+    ],
+  },
+];
+
+const education = [
+  {
+    year: "2025",
+    title: "Ingeniero de Sistemas",
+    institution: "UNAD — Universidad Nacional Abierta y a Distancia",
+  },
+  {
+    year: "2020",
+    title: "Esp. Tecnológica en Gestión y Seguridad de Bases de Datos",
+    institution: "SENA",
+  },
+  {
+    year: "2019",
+    title: "Tecnólogo en Análisis y Desarrollo de Sistemas de Información",
+    institution: "SENA",
+  },
+];
+---
+
+<section class="section" id="experiencia">
+  <div class="container">
+    <div class="section-header">
+      <div class="gradient-line"></div>
+      <h2 class="section-title fade-up">Experiencia & Formación</h2>
+      <p class="section-subtitle fade-up">
+        Trayectoria profesional construida resolviendo problemas reales en diferentes industrias.
+      </p>
+    </div>
+
+    <div class="timeline-layout">
+      <!-- Experience Column -->
+      <div class="timeline-column">
+        <h3 class="column-title fade-up">Experiencia Profesional</h3>
+        <div class="timeline">
+          {experience.map((exp) => (
+            <div class="timeline-item fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content card">
+                <span class="timeline-period">{exp.period}</span>
+                <h4 class="timeline-role">{exp.role}</h4>
+                <p class="timeline-company">{exp.company}</p>
+                <ul class="timeline-achievements">
+                  {exp.achievements.map((a) => (
+                    <li>{a}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Education Column -->
+      <div class="timeline-column">
+        <h3 class="column-title fade-up">Formación Académica</h3>
+        <div class="education-list">
+          {education.map((edu) => (
+            <div class="education-item card fade-up">
+              <span class="edu-year">{edu.year}</span>
+              <div>
+                <h4 class="edu-title">{edu.title}</h4>
+                <p class="edu-institution">{edu.institution}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .column-title {
+    font-size: 1.15rem;
+    color: var(--accent-light);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      var(--accent),
+      var(--border)
+    );
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 1.5rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg-primary);
+    z-index: 1;
+    transform: translateX(calc(-50% + 7px));
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .timeline-period {
+    font-size: 0.8rem;
+    color: var(--accent-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-role {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin: 0.5rem 0 0.25rem;
+  }
+
+  .timeline-company {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-achievements {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .timeline-achievements li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .timeline-achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  /* Education */
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .education-item {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .edu-year {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .edu-title {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  .edu-institution {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .timeline-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
