@@ -123,7 +123,6 @@ const { id, title, subtitle, category, badgeClass, problem, metric, metricLabel,
   }
 
   .card-body {
-    flex: 1;
   }
 
   .card-title {
@@ -149,6 +148,7 @@ const { id, title, subtitle, category, badgeClass, problem, metric, metricLabel,
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-top: 0.25rem;
   }
 
   .highlight-item {
@@ -168,6 +168,7 @@ const { id, title, subtitle, category, badgeClass, problem, metric, metricLabel,
   .card-footer {
     border-top: 1px solid var(--border);
     padding-top: 1.25rem;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -208,14 +209,14 @@ const { id, title, subtitle, category, badgeClass, problem, metric, metricLabel,
   }
 
   .card-link-repo {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-secondary);
-    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border: 1px solid var(--border-hover);
   }
 
   .card-link-repo:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--border-hover);
-    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent);
+    color: var(--accent-light);
   }
 </style>

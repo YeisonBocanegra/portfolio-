@@ -50,16 +50,16 @@ export const projects: Project[] = [
   {
     id: "aec-catalog",
     title: "AEC Catalog Platform",
-    subtitle: "Plataforma E-commerce con SSR Dinámico",
-    category: "Full Stack",
-    badgeClass: "badge-fullstack",
+    subtitle: "Catálogo Digital Profesional con SSR Dinámico",
+    category: "Frontend + SSR",
+    badgeClass: "badge-frontend",
     problem:
       "Los productos se vendían por WhatsApp sin catálogo centralizado ni profesional. Todo dependía de enviar fotos e información manualmente por chat, sin trazabilidad ni escalabilidad.",
     solution:
       "Plataforma web completa con catálogo dinámico desde Supabase, landing page por producto generada automáticamente con SSR, diseño mobile-first y conversión directa a WhatsApp.",
     metric: "80%",
     metricLabel: "Conversión móvil",
-    stack: ["Astro 6", "Supabase", "Vercel SSR", "Google Drive"],
+    stack: ["Astro 6", "TypeScript", "Supabase", "Vercel SSR", "Google Drive"],
     highlights: [
       "Cada producto genera su landing automáticamente",
       "Google Drive como backbone de media (0 costo de almacenamiento)",
