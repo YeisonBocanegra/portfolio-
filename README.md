@@ -4,7 +4,7 @@
 
 Portafolio web profesional que presenta mis proyectos de ingeniería de software, experiencia laboral, stack tecnológico y datos de contacto. Diseñado como herramienta de empleabilidad para reclutadores técnicos, con enfoque en demostrar impacto real y sistemas en producción.
 
-> 🌐 **Desplegado en:** *(próximamente)*
+> 🌐 **Desplegado en:** [yeisonbocanegra.vercel.app](https://yeisonbocanegra.vercel.app/)
 
 ### Objetivo
 Centralizar en una sola página toda la información relevante para un proceso de selección: quién soy, qué he construido, con qué tecnologías trabajo y cómo contactarme. Cada proyecto enlaza directamente a su repositorio en GitHub y, cuando aplica, a su URL en producción.
