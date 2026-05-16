@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Yeison Bocanegra</title>
+  <style>
+    /* ATS-friendly: simple fonts, no graphics, clean structure */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 50px;
+    }
+
+    /* Header */
+    .cv-header { text-align: center; margin-bottom: 20px; border-bottom: 2px solid #2563eb; padding-bottom: 16px; }
+    .cv-name { font-size: 22pt; font-weight: 700; color: #111; letter-spacing: 0.5px; }
+    .cv-title { font-size: 11pt; color: #444; margin: 4px 0 10px; }
+    .cv-contact { font-size: 9.5pt; color: #555; }
+    .cv-contact a { color: #2563eb; text-decoration: none; }
+    .cv-contact span { margin: 0 6px; color: #ccc; }
+
+    /* Sections */
+    .section { margin-bottom: 18px; }
+    .section-title {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Profile */
+    .profile-text { font-size: 10.5pt; color: #333; line-height: 1.6; }
+
+    /* Experience */
+    .exp-item { margin-bottom: 14px; break-inside: avoid; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .exp-role { font-weight: 700; font-size: 10.5pt; color: #111; }
+    .exp-period { font-size: 9.5pt; color: #666; white-space: nowrap; }
+    .exp-company { font-size: 10pt; color: #555; font-style: italic; margin-bottom: 4px; }
+    .exp-list { padding-left: 18px; }
+    .exp-list li { font-size: 10pt; color: #333; margin-bottom: 2px; }
+
+    /* Education */
+    .edu-item { margin-bottom: 8px; }
+    .edu-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .edu-title { font-weight: 700; font-size: 10.5pt; color: #111; }
+    .edu-year { font-size: 9.5pt; color: #666; }
+    .edu-institution { font-size: 10pt; color: #555; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 30px; }
+    .skill-category { font-size: 10pt; }
+    .skill-label { font-weight: 600; color: #111; }
+    .skill-items { color: #444; }
+
+    /* Projects */
+    .proj-item { margin-bottom: 10px; }
+    .proj-name { font-weight: 700; font-size: 10.5pt; color: #111; }
+    .proj-url { font-size: 9pt; color: #2563eb; }
+    .proj-desc { font-size: 10pt; color: #333; }
+    .proj-stack { font-size: 9pt; color: #666; font-style: italic; }
+
+    /* Print optimization */
+    @media print {
+      body { padding: 20px 30px; font-size: 10pt; }
+      .cv-header { border-bottom-color: #000; }
+      .section-title { color: #000; }
+      a { color: #000 !important; }
+      @page { margin: 1cm 1.5cm; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="cv-header">
+    <div class="cv-name">Yeison Yesid Bocanegra Quimbayo</div>
+    <div class="cv-title">Ingeniero de Sistemas · Full Stack Developer · Integración IA</div>
+    <div class="cv-contact">
+      Bogotá, Colombia
+      <span>|</span> 324 565 2269
+      <span>|</span> <a href="mailto:workjbq@gmail.com">workjbq@gmail.com</a>
+      <span>|</span> <a href="https://github.com/YeisonBocanegra">github.com/YeisonBocanegra</a>
+      <span>|</span> <a href="https://www.linkedin.com/in/yeison-bocanegra/">LinkedIn</a>
+    </div>
+    <div class="cv-contact" style="margin-top: 4px;">
+      Tarjeta Profesional: 091122-0778259 CND
+    </div>
+  </div>
+
+  <!-- PERFIL PROFESIONAL -->
+  <div class="section">
+    <div class="section-title">Perfil Profesional</div>
+    <p class="profile-text">
+      Ingeniero de Sistemas con Especialización Tecnológica en Gestión y Seguridad de Bases de Datos. 
+      Experiencia en desarrollo full stack con Next.js, Astro, PHP y TypeScript, integración de IA conversacional 
+      con RAG (Retrieval-Augmented Generation) y Gemini, pasarelas de pago (Wompi) y APIs externas (Google Drive, WhatsApp). 
+      He diseñado, desarrollado y desplegado sistemas en producción que procesan transacciones reales, 
+      gestionan contenido digital a escala y automatizan procesos de venta completos. 
+      Orientado a resultados con fuerte capacidad de análisis, resolución de problemas y comunicación con el cliente.
+    </p>
+  </div>
+
+  <!-- EXPERIENCIA PROFESIONAL -->
+  <div class="section">
+    <div class="section-title">Experiencia Profesional</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Desarrollador Full Stack & Integración IA</span>
+        <span class="exp-period">Ago 2024 – Presente</span>
+      </div>
+      <div class="exp-company">Consultoría Tecnológica (Sector Arquitectura e Ingeniería)</div>
+      <ul class="exp-list">
+        <li>Diseño y desarrollo de asistente de ventas con IA conversacional usando Gemini 2.5 Flash, búsqueda semántica RAG con pgvector y Vercel AI SDK, automatizando el embudo de ventas y permitiendo atención y procesamiento de pagos 24/7 sin intervención humana.</li>
+        <li>Integración de pasarela de pagos Wompi con verificación de webhooks HMAC SHA256 y hash de integridad para prevención de fraude</li>
+        <li>Automatización de control de acceso a archivos mediante Google Drive API con Service Account (share/revoke programático)</li>
+        <li>Desarrollo de catálogo digital SSR con Astro 6, Supabase (PostgreSQL) y Vercel, generando landing pages dinámicas por producto, reduciendo el tiempo de publicación a cero y optimizando los costos de almacenamiento utilizando Google Drive como backend de media.</li>
+        <li>Gestión de campañas de tráfico y conversión en Google Ads y Meta Ads con seguimiento de métricas y optimización de CPA</li>
+        <li>Sistemas desplegados en producción: <strong>asistenteaec.com</strong> y <strong>ingenieriaextremamedia.com</strong></li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Desarrollador de Software / Recepcionista</span>
+        <span class="exp-period">Ene 2020 – Jul 2024</span>
+      </div>
+      <div class="exp-company">Hotel Portal del Magdalena — Construyamos ELB Inversiones SAS</div>
+      <ul class="exp-list">
+        <li>Diseño, desarrollo y venta comercial de PMS completo (SIPM) con PHP, CodeIgniter 3 y MySQL, reemplazando un sistema obsoleto y automatizando el 100% de la facturación y el control de turnos diarios.</li>
+        <li>Módulos de check-in/out digital, control de abonos, caja automatizada y reportes financieros</li>
+        <li>Atención al cliente, gestión de reservaciones, cobros y levantamiento de requerimientos del negocio</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Aprendiz Tecnólogo ADSI — Etapa Productiva</span>
+        <span class="exp-period">Mar 2019 – Ago 2019</span>
+      </div>
+      <div class="exp-company">SENA — Centro Agropecuario La Granja, Espinal (Tolima)</div>
+      <ul class="exp-list">
+        <li>Desarrollo de GesproAgro: sistema de trazabilidad agroindustrial con PHP, CodeIgniter 3 y MySQL</li>
+        <li>Control de procesos, inventario de insumos y análisis sensorial con levantamiento de requerimientos</li>
+      </ul>
+    </div>
+
+
+  </div>
+
+  <!-- HABILIDADES TÉCNICAS -->
+  <div class="section">
+    <div class="section-title">Habilidades Técnicas</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <span class="skill-label">Frontend:</span>
+        <span class="skill-items">React, Next.js 16, Astro 6, TypeScript, JavaScript, HTML5, CSS3</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-label">Backend:</span>
+        <span class="skill-items">Node.js, PHP, CodeIgniter 3, API REST</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-label">Bases de datos:</span>
+        <span class="skill-items">PostgreSQL, MySQL, Supabase, pgvector, RLS</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-label">IA & ML:</span>
+        <span class="skill-items">Gemini AI, RAG, Embeddings, Vercel AI SDK, Tool Calling</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-label">Integraciones:</span>
+        <span class="skill-items">Wompi, Google Drive API, WhatsApp Business API, Meta Cloud API</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-label">Deploy & CI/CD:</span>
+        <span class="skill-items">Vercel, Git, GitHub, GitHub Actions</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-label">Marketing digital:</span>
+        <span class="skill-items">Google Ads, Meta Ads, Analytics, SEO</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-label">Metodologías:</span>
+        <span class="skill-items">Desarrollo ágil, levantamiento de requerimientos, MVC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETENCIAS -->
+  <div class="section">
+    <div class="section-title">Competencias</div>
+    <p class="skill-items" style="font-size: 10pt; line-height: 1.6;">
+      Resolución de problemas y pensamiento analítico | Comunicación efectiva con clientes y equipos | Atención al cliente y orientación a resultados | Trabajo autónomo y bajo presión | Levantamiento de requerimientos funcionales | Aprendizaje continuo y adaptabilidad tecnológica
+    </p>
+  </div>
+
+  <!-- FORMACIÓN ACADÉMICA -->
+  <div class="section">
+    <div class="section-title">Formación Académica</div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-title">Ingeniero de Sistemas</span>
+        <span class="edu-year">2025</span>
+      </div>
+      <div class="edu-institution">UNAD — Universidad Nacional Abierta y a Distancia</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-title">Especialización Tecnológica en Gestión y Seguridad de Bases de Datos</span>
+        <span class="edu-year">2020</span>
+      </div>
+      <div class="edu-institution">SENA</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-title">Tecnólogo en Análisis y Desarrollo de Sistemas de Información</span>
+        <span class="edu-year">2019</span>
+      </div>
+      <div class="edu-institution">SENA</div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
